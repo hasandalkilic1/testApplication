@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="card_design_device_SN_text_color">#555555</color>
+    <color name="detail_screen_shape_detail_screen_sw_rounded_color">#FFFFFF</color>
+
+    <color name="diolog_background">#787676</color>
+    <color name="light_blue">#00BCD4</color>
+</resources>

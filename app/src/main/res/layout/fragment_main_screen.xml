@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="deviceAdapter"
+            type="com.example.testapplication.ui.mainscreen.DeviceAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mainscreen.MainScreenFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImageContainerMain"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main_screen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_blue"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Test Application"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserImageMainScreen"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_user_image_place_holder_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar_main_screen"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/tvUserNameMainScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="John Wayne"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivUserImageMainScreen"
+                app:layout_constraintVertical_bias="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMainScreen"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:adapter="@{deviceAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clImageContainerMain"
+            app:layout_constraintVertical_bias="0.5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
